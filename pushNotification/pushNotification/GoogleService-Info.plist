@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
+	<key>CLIENT_ID</key>
+	<string>407150203383-fefnfqf01aj4fka5jlgjcicvo4lbtqm3.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.407150203383-fefnfqf01aj4fka5jlgjcicvo4lbtqm3</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDJi31mDWkOKQPd9w1IZ9vQic6UA_AFl20</string>
+	<key>GCM_SENDER_ID</key>
+	<string>407150203383</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>Adriandgzg.pushNotification</string>
+	<key>PROJECT_ID</key>
+	<string>messageremote</string>
+	<key>STORAGE_BUCKET</key>
+	<string>messageremote.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<true></true>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<false></false>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:407150203383:ios:e656ef2491b6c859</string>
+	<key>DATABASE_URL</key>
+	<string>https://messageremote.firebaseio.com</string>
+</dict>
+</plist>

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="pushNotification" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Mayte, Ejemplo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ETg-sp-cwk">
+                                <rect key="frame" x="129" y="315" width="117" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EAu-xz-JQI">
+                                <rect key="frame" x="50" y="35" width="38" height="30"/>
+                                <state key="normal" title="Show"/>
+                                <connections>
+                                    <action selector="showPopUp:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0Yj-NW-gRj"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="EAu-xz-JQI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="3eT-pF-B8n"/>
+                            <constraint firstItem="EAu-xz-JQI" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="15" id="FZa-v9-TNf"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="126" y="68"/>
+        </scene>
+        <!--Pop Up Viewcontroller-->
+        <scene sceneID="IHf-HI-gnK">
+            <objects>
+                <viewController storyboardIdentifier="SBPopUP" id="NVN-nV-DbY" customClass="PopUpViewcontroller" customModule="pushNotification" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="YTe-kL-nYK">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FAx-rv-CFn">
+                                <rect key="frame" x="67.5" y="279.5" width="240" height="128"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wWt-tc-FRf">
+                                        <rect key="frame" x="101.5" y="49" width="37" height="30"/>
+                                        <state key="normal" title="close">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="closePopUp:" destination="NVN-nV-DbY" eventType="touchUpInside" id="KPd-l7-oO7"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="hello" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nb4-HU-SYM">
+                                        <rect key="frame" x="40" y="15" width="37" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.58072251080000004" green="0.066734083" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="wWt-tc-FRf" firstAttribute="centerY" secondItem="FAx-rv-CFn" secondAttribute="centerY" id="Muw-PF-5XH"/>
+                                    <constraint firstAttribute="width" constant="240" id="SKA-Ui-C6K"/>
+                                    <constraint firstItem="Nb4-HU-SYM" firstAttribute="top" secondItem="FAx-rv-CFn" secondAttribute="top" constant="15" id="WGV-Kj-KVS"/>
+                                    <constraint firstItem="wWt-tc-FRf" firstAttribute="centerX" secondItem="FAx-rv-CFn" secondAttribute="centerX" id="fkK-3T-VOr"/>
+                                    <constraint firstItem="Nb4-HU-SYM" firstAttribute="leading" secondItem="FAx-rv-CFn" secondAttribute="leading" constant="40" id="vW4-Wb-bSd"/>
+                                    <constraint firstAttribute="height" constant="128" id="wev-wx-XpG"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="FAx-rv-CFn" firstAttribute="centerX" secondItem="X2e-Rn-nf1" secondAttribute="centerX" id="lA8-Sp-58W"/>
+                            <constraint firstItem="FAx-rv-CFn" firstAttribute="centerY" secondItem="X2e-Rn-nf1" secondAttribute="centerY" id="vS0-HM-Iqv"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="X2e-Rn-nf1"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AVk-XW-W0g" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="913" y="68"/>
+        </scene>
+    </scenes>
+</document>
