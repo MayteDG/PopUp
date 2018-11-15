@@ -9,4 +9,9 @@ target 'pushNotification' do
    
  pod 'Firebase/Core'
  pod 'Firebase/Messaging'
+ pod 'Alamofire'
+ pod 'Firebase/Firestore'
+ pod 'ObjectMapper'
+ pod 'AlamofireObjectMapper'
+
 end

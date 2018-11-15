@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6B8F4B5F27E3396D54B8F86E /* Pods_pushNotification.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82C0EA91489993859C2B2934 /* Pods_pushNotification.framework */; };
+		BF16BEF6219D310900C35A02 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF16BEF5219D310900C35A02 /* Data.swift */; };
 		BF40899F219542EF0030C56B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BF40899E219542EF0030C56B /* GoogleService-Info.plist */; };
 		BF4089A62199262F0030C56B /* PopUpViewcontroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4089A52199262F0030C56B /* PopUpViewcontroller.swift */; };
 		BF52B760219540EC00A2F985 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF52B75F219540EC00A2F985 /* AppDelegate.swift */; };
@@ -21,6 +22,7 @@
 		03A1947A9D7D83BAD2295157 /* Pods-pushNotification.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pushNotification.release.xcconfig"; path = "Pods/Target Support Files/Pods-pushNotification/Pods-pushNotification.release.xcconfig"; sourceTree = "<group>"; };
 		7E69E23463279F29751C79AF /* Pods-pushNotification.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pushNotification.debug.xcconfig"; path = "Pods/Target Support Files/Pods-pushNotification/Pods-pushNotification.debug.xcconfig"; sourceTree = "<group>"; };
 		82C0EA91489993859C2B2934 /* Pods_pushNotification.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_pushNotification.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF16BEF5219D310900C35A02 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		BF40899E219542EF0030C56B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BF4089A221954EF00030C56B /* pushNotification.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = pushNotification.entitlements; sourceTree = "<group>"; };
 		BF4089A52199262F0030C56B /* PopUpViewcontroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpViewcontroller.swift; sourceTree = "<group>"; };
@@ -86,6 +88,7 @@
 				BF4089A221954EF00030C56B /* pushNotification.entitlements */,
 				BF52B75F219540EC00A2F985 /* AppDelegate.swift */,
 				BF52B761219540EC00A2F985 /* ViewController.swift */,
+				BF16BEF5219D310900C35A02 /* Data.swift */,
 				BF52B763219540EC00A2F985 /* Main.storyboard */,
 				BF4089A52199262F0030C56B /* PopUpViewcontroller.swift */,
 				BF52B769219540EE00A2F985 /* Assets.xcassets */,
@@ -205,16 +208,36 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-pushNotification/Pods-pushNotification-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireObjectMapper/AlamofireObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/BoringSSL/openssl.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC/GRPCClient.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-C++/grpcpp.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-ProtoRPC/ProtoRPC.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-RxLibrary/RxLibrary.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GRPCClient.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpcpp.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ProtoRPC.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxLibrary.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -232,6 +255,7 @@
 				BF4089A62199262F0030C56B /* PopUpViewcontroller.swift in Sources */,
 				BF52B762219540EC00A2F985 /* ViewController.swift in Sources */,
 				BF52B760219540EC00A2F985 /* AppDelegate.swift in Sources */,
+				BF16BEF6219D310900C35A02 /* Data.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
