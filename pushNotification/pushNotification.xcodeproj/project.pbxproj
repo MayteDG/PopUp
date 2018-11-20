@@ -16,6 +16,12 @@
 		BF52B765219540EC00A2F985 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF52B763219540EC00A2F985 /* Main.storyboard */; };
 		BF52B76A219540EE00A2F985 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF52B769219540EE00A2F985 /* Assets.xcassets */; };
 		BF52B76D219540EE00A2F985 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF52B76B219540EE00A2F985 /* LaunchScreen.storyboard */; };
+		BF7B9F7721A35CF200A600D6 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BF7B9F7521A35CF200A600D6 /* Model.xcdatamodeld */; };
+		BF7B9F9B21A360F300A600D6 /* Name.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BF7B9F9921A360F300A600D6 /* Name.xcdatamodeld */; };
+		BF7B9F9D21A3616B00A600D6 /* VCCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7B9F9C21A3616B00A600D6 /* VCCoreData.swift */; };
+		BF7B9F9F21A3B5D400A600D6 /* VCTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7B9F9E21A3B5D400A600D6 /* VCTableView.swift */; };
+		BF7B9FA221A3B64800A600D6 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7B9FA021A3B64800A600D6 /* TableViewCell.swift */; };
+		BF7B9FA321A3B64800A600D6 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF7B9FA121A3B64800A600D6 /* TableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +39,12 @@
 		BF52B769219540EE00A2F985 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BF52B76C219540EE00A2F985 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BF52B76E219540EE00A2F985 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BF7B9F7621A35CF200A600D6 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		BF7B9F9A21A360F300A600D6 /* Name.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Name.xcdatamodel; sourceTree = "<group>"; };
+		BF7B9F9C21A3616B00A600D6 /* VCCoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCCoreData.swift; sourceTree = "<group>"; };
+		BF7B9F9E21A3B5D400A600D6 /* VCTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCTableView.swift; sourceTree = "<group>"; };
+		BF7B9FA021A3B64800A600D6 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		BF7B9FA121A3B64800A600D6 /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +102,12 @@
 				BF52B761219540EC00A2F985 /* ViewController.swift */,
 				BF16BEF5219D310900C35A02 /* Data.swift */,
 				BF52B763219540EC00A2F985 /* Main.storyboard */,
+				BF7B9FA021A3B64800A600D6 /* TableViewCell.swift */,
+				BF7B9FA121A3B64800A600D6 /* TableViewCell.xib */,
+				BF7B9F9E21A3B5D400A600D6 /* VCTableView.swift */,
+				BF7B9F9C21A3616B00A600D6 /* VCCoreData.swift */,
+				BF7B9F9921A360F300A600D6 /* Name.xcdatamodeld */,
+				BF7B9F7521A35CF200A600D6 /* Model.xcdatamodeld */,
 				BF4089A52199262F0030C56B /* PopUpViewcontroller.swift */,
 				BF52B769219540EE00A2F985 /* Assets.xcassets */,
 				BF52B76B219540EE00A2F985 /* LaunchScreen.storyboard */,
@@ -168,6 +186,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF52B76D219540EE00A2F985 /* LaunchScreen.storyboard in Resources */,
+				BF7B9FA321A3B64800A600D6 /* TableViewCell.xib in Resources */,
 				BF52B76A219540EE00A2F985 /* Assets.xcassets in Resources */,
 				BF40899F219542EF0030C56B /* GoogleService-Info.plist in Resources */,
 				BF52B765219540EC00A2F985 /* Main.storyboard in Resources */,
@@ -252,9 +271,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF7B9F9F21A3B5D400A600D6 /* VCTableView.swift in Sources */,
 				BF4089A62199262F0030C56B /* PopUpViewcontroller.swift in Sources */,
 				BF52B762219540EC00A2F985 /* ViewController.swift in Sources */,
+				BF7B9FA221A3B64800A600D6 /* TableViewCell.swift in Sources */,
+				BF7B9F7721A35CF200A600D6 /* Model.xcdatamodeld in Sources */,
+				BF7B9F9D21A3616B00A600D6 /* VCCoreData.swift in Sources */,
 				BF52B760219540EC00A2F985 /* AppDelegate.swift in Sources */,
+				BF7B9F9B21A360F300A600D6 /* Name.xcdatamodeld in Sources */,
 				BF16BEF6219D310900C35A02 /* Data.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -459,6 +483,29 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		BF7B9F7521A35CF200A600D6 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				BF7B9F7621A35CF200A600D6 /* Model.xcdatamodel */,
+			);
+			currentVersion = BF7B9F7621A35CF200A600D6 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+		BF7B9F9921A360F300A600D6 /* Name.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				BF7B9F9A21A360F300A600D6 /* Name.xcdatamodel */,
+			);
+			currentVersion = BF7B9F9A21A360F300A600D6 /* Name.xcdatamodel */;
+			path = Name.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = BF52B754219540EC00A2F985 /* Project object */;
 }

@@ -22,8 +22,8 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-      read2()
-      listener()
+     // read2()
+     // listener()
         
     }
     
