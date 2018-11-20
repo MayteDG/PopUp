@@ -24,7 +24,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
      // read2()
      // listener()
-        
+        json2()
     }
     
    
@@ -134,6 +134,35 @@ class ViewController: UIViewController {
         self.view.addSubview(ShowPop.view)
         ShowPop.didMove(toParent: self)
     }
+    
+    
+    
+    
+    func json2() {
+       
+        let urlString = "http://upaxqaconpubliclb-1385920124.us-east-1.elb.amazonaws.com:8080/ALERTA/markViewNotifications"
+        let param = [
+            "receiverId": 16995,
+            "notifications": [
+            "id": 107,
+            "dateViewInitial": "2018-09-04 17:55:14",
+            "dateViewEnd": "2018-09-04 17:58:00"
+            ]] as [String : Any]
+        
+
+        Alamofire.request(urlString, method: .post, parameters: param , encoding: JSONEncoding.default, headers: nil).responseJSON {
+            response in
+            switch response.result {
+            case .success:
+                self.update()
+                print(response)
+                break
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
+    
     
 }
 

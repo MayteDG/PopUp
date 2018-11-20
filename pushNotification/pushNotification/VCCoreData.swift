@@ -49,6 +49,7 @@ class VCCoreData: UIViewController {
         let entidaddeRespuestas = NSEntityDescription.entity(forEntityName: "Name", in: contexto)
         let nuevaRespuesta = NSManagedObject(entity: entidaddeRespuestas!, insertInto: contexto)
         nuevaRespuesta.setValue( NombreCd.text , forKey: "name")
+        nuevaRespuesta.setValue(false, forKey: "flag")
         do {
             try contexto.save()
             print ("Guardado")

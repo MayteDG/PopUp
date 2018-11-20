@@ -12,6 +12,8 @@ import CoreData
 class VCTableView: UIViewController, UITableViewDelegate, UITableViewDataSource {
    
     var nombre :  [Name] = []
+    var selec : Int = 0
+    var datosEditar : Name?
     
     @IBOutlet weak var table: UITableView!
     
@@ -25,6 +27,11 @@ class VCTableView: UIViewController, UITableViewDelegate, UITableViewDataSource 
     
     }
     
+    func conexion() -> NSManagedObjectContext {
+        let delegate = UIApplication.shared.delegate as! AppDelegate
+        return delegate.persistentContainer.viewContext
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return nombre.count
     }
@@ -32,14 +39,19 @@ class VCTableView: UIViewController, UITableViewDelegate, UITableViewDataSource 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = table.dequeueReusableCell(withIdentifier: "TableViewCell", for: indexPath) as! TableViewCell
         let respuesta = nombre[indexPath.row]
+
         cell.name?.text = respuesta.name
+        
+        if respuesta.flag {
+            cell.name?.text = "💚 \(respuesta.name!)"
+        }else{
+            cell.name?.text = "❤️ \(respuesta.name!)"
+        }
+        
         return cell
     }
     
-    func conexion() -> NSManagedObjectContext {
-        let delegate = UIApplication.shared.delegate as! AppDelegate
-        return delegate.persistentContainer.viewContext
-    }
+    
     
     func mostrarDatos(){
         let contexto = conexion()
@@ -73,6 +85,41 @@ class VCTableView: UIViewController, UITableViewDelegate, UITableViewDataSource 
         table.reloadData()
         
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+         selec = indexPath.row
         
+    }
 
+    
+    @IBAction func eliminar(_ sender: Any) {
+        let contexto = conexion()
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Name")
+        let borrar = NSBatchDeleteRequest(fetchRequest: fetchRequest)
+        
+        do {
+            try contexto.execute(borrar)
+            print("borro los datos")
+            
+        } catch let error as NSError  {
+            print(" no mostro nada", error)
+        }
+    }
+    
+     func tableView(_ tableView: UITableView, editActionsForRowAt: IndexPath) -> [UITableViewRowAction]? {
+        let more = UITableViewRowAction(style: .normal, title: "Delete") { action, index in
+            print("Eliminado")
+            //guardar los cambios de la parte esa
+        }
+        more.backgroundColor = .lightGray
+        
+        let favorite = UITableViewRowAction(style: .normal, title: "Marcar como No Leido") { action, index in
+            print("favorite button tapped")
+        }
+        favorite.backgroundColor = .orange
+        
+        
+        return [favorite, more]
+    }
+    
 }
