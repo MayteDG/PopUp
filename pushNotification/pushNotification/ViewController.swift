@@ -17,14 +17,18 @@ import AlamofireObjectMapper
 class ViewController: UIViewController {
     let status : [String: Any ] = ["sun" : 1]
     let current = "15"
-    var datosEntrada : Entrada?
     var flag : Bool = false
+    
+    var datosEntrada : EntradaMVNotifications?
+    var paramEntrada : ParamNotif?
+
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
      // read2()
      // listener()
-        json2()
+      json()
     }
     
    
@@ -60,9 +64,18 @@ class ViewController: UIViewController {
     
     func json() {
         //let notificationType = "/PUSH_NOTIF/addNotification"
-        let urlString = "http://upaxqaconpubliclb-1385920124.us-east-1.elb.amazonaws.com:8080/ALERTA/getNotificationsReceiver"
-        datosEntrada = Entrada()
-        datosEntrada?.IdUSer = "16994" //current
+        let urlString = "http://upaxqaconpubliclb-1385920124.us-east-1.elb.amazonaws.com:8080/ALERTA/markViewNotifications"
+        
+        datosEntrada = EntradaMVNotifications()
+        datosEntrada?.receiverId = 16995 //current
+        
+        paramEntrada = ParamNotif ()
+        paramEntrada?.id = 107
+        paramEntrada?.dateViewInitial = "2018-09-04 17:55:14"
+        paramEntrada?.dateViewEnd =  "2018-09-04 17:58:00"
+
+        datosEntrada?.notificationsId = (paramEntrada?.getDictionary2())!
+        
         Alamofire.request(urlString, method: .post, parameters: datosEntrada?.getDictionary(), encoding: JSONEncoding.default, headers: nil).responseJSON {
             response in
             switch response.result {

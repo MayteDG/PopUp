@@ -15,8 +15,7 @@ class VCCoreData: UIViewController {
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
 
     
-    @IBOutlet weak var edadCD: UITextField!
-    @IBOutlet weak var EdadCoredata: UILabel!
+
     
     @IBOutlet weak var NombreCd: UITextField!
     @IBOutlet weak var nombreshow: UILabel!
@@ -24,27 +23,13 @@ class VCCoreData: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
     }
     
 
-    @IBAction func guardarEdad(_ sender: Any) {
-        let contexto = conexionCoreData2()
-        let entidaddeRespuestas = NSEntityDescription.entity(forEntityName: "Edad", in: contexto)
-        let nuevaRespuesta = NSManagedObject(entity: entidaddeRespuestas!, insertInto: contexto)
-        let ID = Int16(edadCD.text!)
-        nuevaRespuesta.setValue( ID , forKey: "edad")
-        do {
-            try contexto.save()
-            print ("Guardado")
-        } catch let error as NSError {
-            print("No se pudo guardar",error)
-        }
-    }
-    
-   
+
     
     @IBAction func GuardarNombre(_ sender: Any) {
-        
         let contexto = conexionCoreData()
         let entidaddeRespuestas = NSEntityDescription.entity(forEntityName: "Name", in: contexto)
         let nuevaRespuesta = NSManagedObject(entity: entidaddeRespuestas!, insertInto: contexto)
@@ -65,11 +50,9 @@ class VCCoreData: UIViewController {
         let delegate = UIApplication.shared.delegate as! AppDelegate
         return delegate.persistentContainer.viewContext
     }
-    //Model Entity = Edad
-    func conexionCoreData2 () -> NSManagedObjectContext {
-        let delegate = UIApplication.shared.delegate as! AppDelegate
-        return delegate.persistentContainer2.viewContext
-    }
+  
+    
+    
     
     
     

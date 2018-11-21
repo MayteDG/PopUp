@@ -50,7 +50,61 @@ class receiver : Mappable {
     }
 }
     
+//----------MarkReceiver----------
+
+
+
+class EntradaMVNotifications : NSObject {
+    var notificationsId : Parameters
+    var receiverId : Int
     
+    override init() {
+        notificationsId = Parameters ()
+        receiverId = 0
+    }
+    func getDictionary () ->  Parameters{
+        let result : [String : Any]
+        result = ["receiverId" : "\(receiverId)", "notifications" : ["\(notificationsId)"]  ]
+        
+        return result
+    }
+}
+
+class ParamNotif {
+    var id : Int
+    var dateViewInitial : String
+    var dateViewEnd : String
+    
+    init() {
+        id = 0
+        dateViewInitial = ""
+        dateViewEnd = ""
+        
+    }
+    func getDictionary2 () ->  Parameters{
+        let result : [String : Any]
+        result = ["id":"\(id)", "dateViewInitial" :["\(dateViewInitial)"], "dateViewEnd":["\(dateViewEnd)"] ]
+        
+        return result
+    }
+    
+}
    
- 
+class resultMarkReceived: Mappable {
+    
+    var affected: NSNumber?
+    var provided: NSNumber?
+    var successful: String?
+    var notificationsId: [ParamNotif]?
+    
+    required init?(map: Map){
+    }
+    
+    func mapping(map: Map) {
+        affected <- map["affected"]
+        provided <- map["provided"]
+        successful <- map["successful"]
+        notificationsId <- map["notificationsId"]
+}
+}
 
