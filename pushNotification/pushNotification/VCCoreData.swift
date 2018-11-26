@@ -11,10 +11,13 @@ import CoreData
 
 class VCCoreData: UIViewController {
     
+    var managedObjectContext: NSManagedObjectContext? = nil
+    
     var tasks: [Name] = []
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
 
-    
+    var numer : Int = 0
+
 
     
     @IBOutlet weak var NombreCd: UITextField!
@@ -22,7 +25,8 @@ class VCCoreData: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+  nuevoNumero()
         
     }
     
@@ -41,6 +45,7 @@ class VCCoreData: UIViewController {
         } catch let error as NSError {
             print("No se pudo guardar",error)
         }
+     
     }
     
     
@@ -52,7 +57,19 @@ class VCCoreData: UIViewController {
     }
   
     
-    
+ 
+    func nuevoNumero () {
+        guard let _context = managedObjectContext else { return }
+        let object = NSEntityDescription.insertNewObject(forEntityName: "Name", into: self.managedObjectContext!) as! Name
+        //Guardar en la entidad
+        let val = numer + 1
+        object.contador = Int16(val)
+        do {
+            try _context.save()
+        } catch {
+            
+        }
+    }
     
     
     

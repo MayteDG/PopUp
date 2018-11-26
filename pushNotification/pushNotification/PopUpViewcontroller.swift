@@ -11,11 +11,10 @@ import CoreData
 
 class PopUpViewcontroller: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
    
-    
+     var managedObjectContext: NSManagedObjectContext? = nil
     @IBOutlet weak var col: UICollectionView!
     
       var nombre :  [Name] = []
-      var selec : Int = 0
       var filtrado : [Name] =  []
       var lugar : Int = 0
     
@@ -89,16 +88,17 @@ class PopUpViewcontroller: UIViewController, UICollectionViewDelegate, UICollect
         let fetchRequest : NSFetchRequest<Name> = Name.fetchRequest()
         do {
             nombre = try contexto.fetch(fetchRequest)
+            for n in nombre {
+                print (n.contador)
+                print (n.flag)
+                print (n.name)
+            }
             
         } catch let error as NSError {
        print("no mostro nada", error)
         }
         
         filtrado = nombre.filter ({$0.flag == false })
-        
-        for i in filtrado {
-            print (i.name!)
-        }
     }
     
     

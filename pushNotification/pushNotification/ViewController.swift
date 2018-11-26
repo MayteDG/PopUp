@@ -25,6 +25,7 @@ class ViewController: UIViewController, listenerprotocol {
             self.json()
         }
     }
+    var managedObjectContext: NSManagedObjectContext? = nil
     
     let status : [String: Any ] = ["sun" : 1]
     let current = "15"
