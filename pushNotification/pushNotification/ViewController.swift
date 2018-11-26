@@ -12,9 +12,20 @@ import FirebaseCore
 import FirebaseFirestore
 import ObjectMapper
 import AlamofireObjectMapper
+import CoreData
+
+protocol listenerprotocol  {
+    func cambio (Status : Bool)
+}
 
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, listenerprotocol {
+    func cambio(Status: Bool) {
+        if Status == true {
+            self.json()
+        }
+    }
+    
     let status : [String: Any ] = ["sun" : 1]
     let current = "15"
     var flag : Bool = false
@@ -22,13 +33,13 @@ class ViewController: UIViewController {
     var datosEntrada : EntradaMVNotifications?
     var paramEntrada : ParamNotif?
 
-    
+    var nombre : [Name] = []
+    var filtrado : [Name] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-     // read2()
-     // listener()
-      json()
+     comprobarshow()
+    mostrarDatos()
     }
     
    
@@ -122,10 +133,13 @@ class ViewController: UIViewController {
         let userReference = Firestore.firestore().collection("user")
         userReference.document(current).setData(["sun": false])
     }
-
+    
+    
+        
     func listener () {
+        
         let db = Firestore.firestore()
-        db.collection("user").document(current).addSnapshotListener {documentSnapshot, error in
+        db.collection("user").document("15").addSnapshotListener {documentSnapshot, error in
             guard let document = documentSnapshot else {
                 print("Error fetching document: \(error!)")
                 return
@@ -134,7 +148,8 @@ class ViewController: UIViewController {
             if document.data() != nil {
                 let options = ( NSDictionary(dictionary: document.data()!).isEqual(to: self.status) )
                 if options == true {
-                    self.json()
+                
+                  self.json()
                 }
             }
         }
@@ -176,6 +191,34 @@ class ViewController: UIViewController {
         }
     }
     
+    func mostrarDatos(){
+        let contexto = conexion()
+        let fetchRequest : NSFetchRequest<Name> = Name.fetchRequest()
+        do {
+            nombre = try contexto.fetch(fetchRequest)
+        } catch let error as NSError {
+            print("no mostro nada", error)
+        }
+        filtrado = nombre.filter ({$0.flag == true })
+    }
+   
+    func conexion() -> NSManagedObjectContext {
+        let delegate = UIApplication.shared.delegate as! AppDelegate
+        return delegate.persistentContainer.viewContext
+    }
     
+    
+    func comprobarshow () {
+        if filtrado.count == 0  {
+            print ("Mensajes Vistos")
+        }
+        else {
+            let ShowPop = UIStoryboard (name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SBPopUP") as! PopUpViewcontroller
+            self.addChild(ShowPop)
+            ShowPop.view.frame = self.view.frame
+            self.view.addSubview(ShowPop.view)
+            ShowPop.didMove(toParent: self)
+        }
+    }
 }
 

@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		6B8F4B5F27E3396D54B8F86E /* Pods_pushNotification.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82C0EA91489993859C2B2934 /* Pods_pushNotification.framework */; };
 		BF16BEF6219D310900C35A02 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF16BEF5219D310900C35A02 /* Data.swift */; };
+		BF178A8D21AB818D009B44C5 /* CVCPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF178A8B21AB818D009B44C5 /* CVCPopUp.swift */; };
+		BF178A8E21AB818D009B44C5 /* CVCPopUp.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF178A8C21AB818D009B44C5 /* CVCPopUp.xib */; };
 		BF40899F219542EF0030C56B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BF40899E219542EF0030C56B /* GoogleService-Info.plist */; };
 		BF4089A62199262F0030C56B /* PopUpViewcontroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4089A52199262F0030C56B /* PopUpViewcontroller.swift */; };
 		BF52B760219540EC00A2F985 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF52B75F219540EC00A2F985 /* AppDelegate.swift */; };
@@ -29,6 +31,8 @@
 		7E69E23463279F29751C79AF /* Pods-pushNotification.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pushNotification.debug.xcconfig"; path = "Pods/Target Support Files/Pods-pushNotification/Pods-pushNotification.debug.xcconfig"; sourceTree = "<group>"; };
 		82C0EA91489993859C2B2934 /* Pods_pushNotification.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_pushNotification.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF16BEF5219D310900C35A02 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		BF178A8B21AB818D009B44C5 /* CVCPopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVCPopUp.swift; sourceTree = "<group>"; };
+		BF178A8C21AB818D009B44C5 /* CVCPopUp.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CVCPopUp.xib; sourceTree = "<group>"; };
 		BF40899E219542EF0030C56B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BF4089A221954EF00030C56B /* pushNotification.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = pushNotification.entitlements; sourceTree = "<group>"; };
 		BF4089A52199262F0030C56B /* PopUpViewcontroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpViewcontroller.swift; sourceTree = "<group>"; };
@@ -109,6 +113,8 @@
 				BF7B9FA021A3B64800A600D6 /* TableViewCell.swift */,
 				BF7B9FA121A3B64800A600D6 /* TableViewCell.xib */,
 				BF4089A52199262F0030C56B /* PopUpViewcontroller.swift */,
+				BF178A8B21AB818D009B44C5 /* CVCPopUp.swift */,
+				BF178A8C21AB818D009B44C5 /* CVCPopUp.xib */,
 				BF52B769219540EE00A2F985 /* Assets.xcassets */,
 				BF52B76B219540EE00A2F985 /* LaunchScreen.storyboard */,
 				BF52B76E219540EE00A2F985 /* Info.plist */,
@@ -186,6 +192,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF52B76D219540EE00A2F985 /* LaunchScreen.storyboard in Resources */,
+				BF178A8E21AB818D009B44C5 /* CVCPopUp.xib in Resources */,
 				BF7B9FA321A3B64800A600D6 /* TableViewCell.xib in Resources */,
 				BF52B76A219540EE00A2F985 /* Assets.xcassets in Resources */,
 				BF40899F219542EF0030C56B /* GoogleService-Info.plist in Resources */,
@@ -276,6 +283,7 @@
 				BF52B762219540EC00A2F985 /* ViewController.swift in Sources */,
 				BF7B9FA221A3B64800A600D6 /* TableViewCell.swift in Sources */,
 				BF7B9F7721A35CF200A600D6 /* Model.xcdatamodeld in Sources */,
+				BF178A8D21AB818D009B44C5 /* CVCPopUp.swift in Sources */,
 				BF7B9F9D21A3616B00A600D6 /* VCCoreData.swift in Sources */,
 				BF52B760219540EC00A2F985 /* AppDelegate.swift in Sources */,
 				BF7B9F9B21A360F300A600D6 /* Name.xcdatamodeld in Sources */,

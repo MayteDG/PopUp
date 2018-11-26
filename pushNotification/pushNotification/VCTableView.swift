@@ -8,12 +8,21 @@
 
 import UIKit
 import CoreData
+import FirebaseFirestore
 
 class VCTableView: UIViewController, UITableViewDelegate, UITableViewDataSource {
+  
+    
    
+    var delegate : listenerprotocol?
+    
     var nombre :  [Name] = []
     var selec : Int = 0
     var datosEditar : Name?
+    
+    
+    let status : [String: Any ] = ["sun" : 1]
+    let current = "15"
     
     @IBOutlet weak var table: UITableView!
     
@@ -23,9 +32,32 @@ class VCTableView: UIViewController, UITableViewDelegate, UITableViewDataSource 
         table.register(UINib(nibName: "TableViewCell", bundle: nil), forCellReuseIdentifier: "TableViewCell")
         table.delegate = self
         table.dataSource = self
-        mostrarDatos()
-    
+      
+    mostrarDatos()
+    listener()
     }
+    
+    
+    func listener () {
+        
+        let db = Firestore.firestore()
+        db.collection("user").document("15").addSnapshotListener {documentSnapshot, error in
+            guard let document = documentSnapshot else {
+                print("Error fetching document: \(error!)")
+                return
+            }
+            print("Current data: \(String(describing: document.data()))")
+            if document.data() != nil {
+                let options = ( NSDictionary(dictionary: document.data()!).isEqual(to: self.status) )
+                if options == true {
+                    self.delegate?.cambio(Status: true)
+                }
+            }
+        }
+        
+    }
+    
+    
     
     func conexion() -> NSManagedObjectContext {
         let delegate = UIApplication.shared.delegate as! AppDelegate
@@ -121,5 +153,6 @@ class VCTableView: UIViewController, UITableViewDelegate, UITableViewDataSource 
         
         return [favorite, more]
     }
+    
     
 }
