@@ -14,12 +14,20 @@ import ObjectMapper
 import AlamofireObjectMapper
 import CoreData
 
+import AVKit
+import AVFoundation
+import MediaPlayer
+import AudioToolbox
+
+
 protocol listenerprotocol  {
     func cambio (Status : Bool)
 }
 
 
-class ViewController: UIViewController, listenerprotocol {
+class ViewController: UIViewController, listenerprotocol , AVPlayerViewControllerDelegate{
+    
+    
     func cambio(Status: Bool) {
         if Status == true {
             self.json()
@@ -39,8 +47,9 @@ class ViewController: UIViewController, listenerprotocol {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-     comprobarshow()
-    mostrarDatos()
+    
+       listener()
+        descargarvide()
     }
     
    
@@ -155,7 +164,20 @@ class ViewController: UIViewController, listenerprotocol {
             }
         }
     }
+    func descargarvide () {
+        let videoURL = URL(string: "https://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4")
+        let player = AVPlayer(url: videoURL!)
+        let playervc = AVPlayerViewController()
+        playervc.delegate = self
+        playervc.player = player
+        self.present(playervc, animated: true) {
+            playervc.player!.play()
+        }
+    }
 
+    
+    
+    
     @IBAction func showPopUp(_ sender: Any) {
         let ShowPop = UIStoryboard (name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SBPopUP") as! PopUpViewcontroller
         self.addChild(ShowPop)
