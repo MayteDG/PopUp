@@ -45,11 +45,16 @@ class ViewController: UIViewController, listenerprotocol , AVPlayerViewControlle
     var nombre : [Name] = []
     var filtrado : [Name] = []
     
+    @IBOutlet weak var progressView: UIProgressView!
+   
+    var playerController = AVPlayerViewController ()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     
        listener()
-        descargarvide()
+    
+        downloadVideo()
     }
     
    
@@ -164,6 +169,8 @@ class ViewController: UIViewController, listenerprotocol , AVPlayerViewControlle
             }
         }
     }
+    
+    
     func descargarvide () {
         let videoURL = URL(string: "https://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4")
         let player = AVPlayer(url: videoURL!)
@@ -174,7 +181,36 @@ class ViewController: UIViewController, listenerprotocol , AVPlayerViewControlle
             playervc.player!.play()
         }
     }
-
+    
+    func downloadVideo(){
+        
+        Alamofire.request("http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4").downloadProgress(closure : { (progress) in
+            print(progress.fractionCompleted)
+           self.progressView!.progress = Float(progress.fractionCompleted)
+        }).responseData{ (response) in
+            print(response)
+            print(response.result.value!)
+            print(response.result.description)
+            if let data = response.result.value {
+                
+                let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+                let videoURL = documentsURL.appendingPathComponent("video.mp4")
+                do {
+                    try data.write(to: videoURL)
+                } catch {
+                    print("Something went wrong!")
+                }
+                print(videoURL)
+                let player = AVPlayer(url: videoURL as URL)
+                self.playerController.player = player
+                self.addChild(self.playerController)
+                self.view.addSubview(self.playerController.view)
+                self.playerController.view.frame = self.view.frame
+                player.play()
+            }
+        }
+    }
+    
     
     
     
