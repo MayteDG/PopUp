@@ -26,8 +26,8 @@ class VCCoreData: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-  nuevoNumero()
-        
+
+        nuevoNumero()
     }
     
 
@@ -39,6 +39,8 @@ class VCCoreData: UIViewController {
         let nuevaRespuesta = NSManagedObject(entity: entidaddeRespuestas!, insertInto: contexto)
         nuevaRespuesta.setValue( NombreCd.text , forKey: "name")
         nuevaRespuesta.setValue(false, forKey: "flag")
+        nuevaRespuesta.setValue(numer, forKey: "contador")
+        print (nuevaRespuesta)
         do {
             try contexto.save()
             print ("Guardado")
@@ -70,7 +72,17 @@ class VCCoreData: UIViewController {
             
         }
     }
+ 
     
+    @IBAction func nuevonumero(_ sender: Any) {
+          
+    }
+    
+    
+    
+    @IBAction func nuevonumero2(_ sender: Any) {
+        
+    }
     
     
 }
