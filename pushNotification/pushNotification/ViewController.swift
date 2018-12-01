@@ -19,20 +19,12 @@ import AVFoundation
 import MediaPlayer
 import AudioToolbox
 
-
-protocol listenerprotocol  {
-    func cambio (Status : Bool)
-}
-
-
-class ViewController: UIViewController, listenerprotocol , AVPlayerViewControllerDelegate{
-    
-    
+class ViewController: UIViewController, AVPlayerViewControllerDelegate, listenerprotocol{
     func cambio(Status: Bool) {
-        if Status == true {
-            self.json()
-        }
+        print ("Hubo un cambio en TRUE")
     }
+    
+
     var managedObjectContext: NSManagedObjectContext? = nil
     
     let status : [String: Any ] = ["sun" : 1]
@@ -44,19 +36,19 @@ class ViewController: UIViewController, listenerprotocol , AVPlayerViewControlle
 
     var nombre : [Name] = []
     var filtrado : [Name] = []
+   
     
     @IBOutlet weak var progressView: UIProgressView!
    
     var playerController = AVPlayerViewController ()
-    
+    var u = GlobalVariables.sharedinstance
+        
     override func viewDidLoad() {
         super.viewDidLoad()
-    
-       listener()
-    
-        downloadVideo()
+     
+        u.listener()
+        u.delegate = self
     }
-    
    
     func read2 () {
         
@@ -164,7 +156,6 @@ class ViewController: UIViewController, listenerprotocol , AVPlayerViewControlle
                 let options = ( NSDictionary(dictionary: document.data()!).isEqual(to: self.status) )
                 if options == true {
                 
-                  self.json()
                 }
             }
         }
@@ -278,6 +269,11 @@ class ViewController: UIViewController, listenerprotocol , AVPlayerViewControlle
             self.view.addSubview(ShowPop.view)
             ShowPop.didMove(toParent: self)
         }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
     }
 }
 

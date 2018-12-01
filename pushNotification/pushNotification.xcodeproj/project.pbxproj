@@ -11,6 +11,7 @@
 		BF16BEF6219D310900C35A02 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF16BEF5219D310900C35A02 /* Data.swift */; };
 		BF178A8D21AB818D009B44C5 /* CVCPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF178A8B21AB818D009B44C5 /* CVCPopUp.swift */; };
 		BF178A8E21AB818D009B44C5 /* CVCPopUp.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF178A8C21AB818D009B44C5 /* CVCPopUp.xib */; };
+		BF178A9B21B28679009B44C5 /* singleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF178A9A21B28679009B44C5 /* singleton.swift */; };
 		BF40899F219542EF0030C56B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BF40899E219542EF0030C56B /* GoogleService-Info.plist */; };
 		BF4089A62199262F0030C56B /* PopUpViewcontroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4089A52199262F0030C56B /* PopUpViewcontroller.swift */; };
 		BF52B760219540EC00A2F985 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF52B75F219540EC00A2F985 /* AppDelegate.swift */; };
@@ -33,6 +34,7 @@
 		BF16BEF5219D310900C35A02 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		BF178A8B21AB818D009B44C5 /* CVCPopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVCPopUp.swift; sourceTree = "<group>"; };
 		BF178A8C21AB818D009B44C5 /* CVCPopUp.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CVCPopUp.xib; sourceTree = "<group>"; };
+		BF178A9A21B28679009B44C5 /* singleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = singleton.swift; sourceTree = "<group>"; };
 		BF40899E219542EF0030C56B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BF4089A221954EF00030C56B /* pushNotification.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = pushNotification.entitlements; sourceTree = "<group>"; };
 		BF4089A52199262F0030C56B /* PopUpViewcontroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpViewcontroller.swift; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 				BF4089A221954EF00030C56B /* pushNotification.entitlements */,
 				BF52B75F219540EC00A2F985 /* AppDelegate.swift */,
 				BF52B761219540EC00A2F985 /* ViewController.swift */,
+				BF178A9A21B28679009B44C5 /* singleton.swift */,
 				BF16BEF5219D310900C35A02 /* Data.swift */,
 				BF52B763219540EC00A2F985 /* Main.storyboard */,
 				BF7B9F9E21A3B5D400A600D6 /* VCTableView.swift */,
@@ -281,6 +284,7 @@
 				BF7B9F9F21A3B5D400A600D6 /* VCTableView.swift in Sources */,
 				BF4089A62199262F0030C56B /* PopUpViewcontroller.swift in Sources */,
 				BF52B762219540EC00A2F985 /* ViewController.swift in Sources */,
+				BF178A9B21B28679009B44C5 /* singleton.swift in Sources */,
 				BF7B9FA221A3B64800A600D6 /* TableViewCell.swift in Sources */,
 				BF7B9F7721A35CF200A600D6 /* Model.xcdatamodeld in Sources */,
 				BF178A8D21AB818D009B44C5 /* CVCPopUp.swift in Sources */,

@@ -11,10 +11,6 @@ import CoreData
 import FirebaseFirestore
 
 class VCTableView: UIViewController, UITableViewDelegate, UITableViewDataSource {
-  
-    
-   
-    var delegate : listenerprotocol?
     
     var nombre :  [Name] = []
     var selec : Int = 0
@@ -25,7 +21,7 @@ class VCTableView: UIViewController, UITableViewDelegate, UITableViewDataSource 
     let current = "15"
     
     @IBOutlet weak var table: UITableView!
-    
+    var t = GlobalVariables.sharedinstance
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -33,8 +29,7 @@ class VCTableView: UIViewController, UITableViewDelegate, UITableViewDataSource 
         table.delegate = self
         table.dataSource = self
       
-    mostrarDatos()
-    listener()
+      t.listener()
     }
     
     
@@ -50,7 +45,7 @@ class VCTableView: UIViewController, UITableViewDelegate, UITableViewDataSource 
             if document.data() != nil {
                 let options = ( NSDictionary(dictionary: document.data()!).isEqual(to: self.status) )
                 if options == true {
-                    self.delegate?.cambio(Status: true)
+                   
                 }
             }
         }
